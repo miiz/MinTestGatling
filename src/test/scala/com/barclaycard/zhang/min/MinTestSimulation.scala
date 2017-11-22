@@ -1,15 +1,16 @@
 package com.barclaycard.zhang.min
 
-import scala.concurrent.duration._
-
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
-import io.gatling.jdbc.Predef._
 
 class MinTestSimulation extends Simulation {
 
+	val baseURL : String = {
+			Option(System.getenv("MIN_TEST_URL")).getOrElse("http://localhost:8080")
+	}
+
 	val httpProtocol = http
-		.baseURL("http://localhost:8080")
+		.baseURL(baseURL)
 		.inferHtmlResources(BlackList(""".*\.css""", """.*\.js""", """.*\.ico"""), WhiteList())
 		.acceptHeader("text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8")
 		.acceptEncodingHeader("gzip, deflate")
