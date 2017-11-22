@@ -19,12 +19,13 @@ class MinTestSimulation extends Simulation {
 
 	val headers_0 = Map("Upgrade-Insecure-Requests" -> "1")
 
-
-
 	val scn = scenario("MinTestSimulation")
 		.exec(http("request_0")
 			.get("/")
 			.headers(headers_0))
 
-	setUp(scn.inject(atOnceUsers(10))).protocols(httpProtocol)
+	setUp(scn.inject(atOnceUsers(10))).protocols(httpProtocol).assertions(
+		global.responseTime.max.lt(1000),
+		global.successfulRequests.percent.gt(95)
+	)
 }
