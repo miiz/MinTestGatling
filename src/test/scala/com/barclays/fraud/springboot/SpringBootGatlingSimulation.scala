@@ -1,9 +1,9 @@
-package com.barclaycard.zhang.min
+package com.barclays.fraud.springboot
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 
-class MinTestSimulation extends Simulation {
+class SpringBootGatlingSimulation extends Simulation {
 
 	val baseURL : String = {
 			Option(System.getenv("MIN_TEST_URL")).getOrElse("http://localhost:8080")

@@ -1,0 +1,55 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building spring-boot-greetings-gatling 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- gatling-maven-plugin:2.2.4:test (default-cli) @ spring-boot-greetings-gatling ---
+Simulation com.barclays.fraud.springboot.SpringBootGatlingSimulation started...
+
+================================================================================
+2017-11-24 15:49:11                                           1s elapsed
+---- Requests ------------------------------------------------------------------
+> Global                                                   (OK=10     KO=0     )
+> request_0                                                (OK=10     KO=0     )
+
+---- MinTestSimulation ---------------------------------------------------------
+[##########################################################################]100%
+          waiting: 0      / active: 0      / done:10    
+================================================================================
+
+Simulation com.barclays.fraud.springboot.SpringBootGatlingSimulation completed in 0 seconds
+Parsing log file(s)...
+Parsing log file(s) done
+Generating reports...
+
+================================================================================
+---- Global Information --------------------------------------------------------
+> request count                                         10 (OK=10     KO=0     )
+> min response time                                     10 (OK=10     KO=-     )
+> max response time                                    298 (OK=298    KO=-     )
+> mean response time                                   164 (OK=164    KO=-     )
+> std deviation                                         89 (OK=89     KO=-     )
+> response time 50th percentile                        159 (OK=159    KO=-     )
+> response time 75th percentile                        227 (OK=227    KO=-     )
+> response time 95th percentile                        285 (OK=285    KO=-     )
+> response time 99th percentile                        295 (OK=295    KO=-     )
+> mean requests/sec                                     10 (OK=10     KO=-     )
+---- Response Time Distribution ------------------------------------------------
+> t < 800 ms                                            10 (100%)
+> 800 ms < t < 1200 ms                                   0 (  0%)
+> t > 1200 ms                                            0 (  0%)
+> failed                                                 0 (  0%)
+================================================================================
+
+Reports generated in 1s.
+Please open the following file: C:\Projects\MinTestGatling\target\gatling\springbootgatlingsimulation-1511538549964\index.html
+Global: max of response time is less than 1000.0 : true
+Global: percentage of successful requests is greater than 95.0 : true
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 13.993 s
+[INFO] Finished at: 2017-11-24T15:49:13+00:00
+[INFO] Final Memory: 8M/113M
+[INFO] ------------------------------------------------------------------------
